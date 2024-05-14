@@ -5,15 +5,16 @@ import Link from 'next/link';
 
 const trainingItems: MenuProps['items'] = [
   {
-    label: <a href="/training/max-hangs">Max hangs</a>,
-    key: '0',
-  },
-  {
-    label: <a href="/training/strength-calc">Strength Calculator</a>,
+    label: <Link href="/training/strength-calc">Strength Calculator</Link>,
     key: '1',
   },
   {
     type: 'divider',
+  },
+  {
+    label: <Link href="/training/max-hangs">Max hangs</Link>,
+    key: '0',
+    disabled: true,
   },
   {
     label: 'Endurance protocol',
@@ -24,12 +25,12 @@ const trainingItems: MenuProps['items'] = [
 
 const socialItems: MenuProps['items'] = [
   {
-    label: <a href="/training/max-hangs">Instagram</a>,
+    label: <Link href="/training/max-hangs">Instagram</Link>,
     key: '0',
     disabled: true,
   },
   {
-    label: <a href="/training/strength-calc">Youtube</a>,
+    label: <Link href="/training/strength-calc">Youtube</Link>,
     key: '1',
     disabled: true,
   },
@@ -37,12 +38,12 @@ const socialItems: MenuProps['items'] = [
 
 const shopItems: MenuProps['items'] = [
   {
-    label: <a href="/training/max-hangs">Finger training</a>,
+    label: <Link href="/training/max-hangs">Finger training</Link>,
     key: '0',
     disabled: true,
   },
   {
-    label: <a href="/training/strength-calc">Clothing</a>,
+    label: <Link href="/training/strength-calc">Clothing</Link>,
     key: '1',
     disabled: true,
   },
@@ -68,14 +69,14 @@ export default function NavBar(props: Props) {
           </Link>
         </Dropdown>
         <Dropdown menu={{ items: trainingItems }} placement="bottom">
-          <a style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()}>
+          <Link href="#" style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()}>
             <Space>Training</Space>
-          </a>
+          </Link>
         </Dropdown>
         <Dropdown menu={{ items: socialItems }} placement="bottom">
-          <a style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()}>
+          <Link href="#" style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()}>
             <Space>Socials</Space>
-          </a>
+          </Link>
         </Dropdown>
         <a href="#">Login</a>
       </nav>

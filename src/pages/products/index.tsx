@@ -15,7 +15,7 @@ export const getStaticProps = fetchServerSideProps(async () => {
 export default function Page(props: PageProps<typeof getStaticProps>) {
   return (
     <StoreLayout>
-      <NextSeo title="Products" description="All Products from Next Shopify Storefront" />
+      <NextSeo title="Shop" description="All Products from Next Shopify Storefront" />
       <div className="mx-auto max-w-7xl p-6 lg:p-8">
         <ProductListSection data={props.data.productListSection} />
       </div>
