@@ -28,7 +28,9 @@ export default function Page(props: PageProps<typeof getStaticProps>) {
   return (
     <StoreLayout>
       <NextSeo title={seo.title} description={seo.description} />
-      <ProductSingleSection data={props.data.productSingleSection} />
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <ProductSingleSection data={props.data.productSingleSection} />
+      </div>
     </StoreLayout>
   );
 }

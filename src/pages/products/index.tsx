@@ -16,7 +16,9 @@ export default function Page(props: PageProps<typeof getStaticProps>) {
   return (
     <StoreLayout>
       <NextSeo title="Products" description="All Products from Next Shopify Storefront" />
-      <ProductListSection data={props.data.productListSection} />
+      <div className="mx-auto max-w-7xl p-6 lg:p-8">
+        <ProductListSection data={props.data.productListSection} />
+      </div>
     </StoreLayout>
   );
 }

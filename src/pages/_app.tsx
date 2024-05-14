@@ -1,4 +1,5 @@
 import '@site/assets/style.css';
+import '@site/assets/filmgrain.css';
 import ProgressBar from 'nextjs-progressbar';
 import { NextAppProps, DefaultSeo } from '@site/utilities/deps';
 import { ShopifyProvider, CartProvider } from '@shopify/hydrogen-react';
@@ -15,12 +16,12 @@ export default function App({ Component, pageProps }: NextAppProps) {
       storefrontApiVersion={storefrontApiVersion}
     >
       <DefaultSeo
-        defaultTitle="Next Shopify Storefront"
-        titleTemplate="%s • Next Shopify Storefront"
-        description="🛍 A Shopping Cart built with TypeScript, Tailwind CSS, Headless UI, Next.js, React.js, Shopify Hydrogen React,... and Shopify Storefront GraphQL API."
+        defaultTitle="STRØNK climbing"
+        titleTemplate="%s • STRØNK climbing"
+        description="⛰️ An online site specialising in climbing training equipment and apparel"
       />
       <CartProvider>
-        <ProgressBar color="orange" />
+        <ProgressBar options={{ easing: 'ease', speed: 500, showSpinner: false }} color="purple" />
         <Component {...pageProps} />
       </CartProvider>
     </ShopifyProvider>
