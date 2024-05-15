@@ -11,7 +11,7 @@ export function HeaderSection() {
   return (
     <header className="border-b bg-white/70 py-2 backdrop-blur-2xl sticky top-0 z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between pt-1 px-8" aria-label="Global">
-        <div className="flex flex-1">
+        <div className="flex flex-1 z-50">
           <NextLink href="/products" className="-m-1.5 p-1.5">
             <span className="sr-only">Storefront</span>
             <ShoppingBagIcon className="h-6 w-6"></ShoppingBagIcon>
