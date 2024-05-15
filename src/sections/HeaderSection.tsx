@@ -17,8 +17,12 @@ export function HeaderSection() {
             <ShoppingBagIcon className="h-6 w-6"></ShoppingBagIcon>
           </NextLink>
         </div>
+
         <Link href="/">
-          <Image src="/stronk.png" alt="logo" width="200" height="150" />
+          {/* <Image src="/stronk.png" alt="logo" width="200" height="150" /> */}
+          <div className="h-12 lg:h-20">
+            <Image className="p-2" src="/stronk.png" alt="logo" layout="fill" objectFit="contain" />
+          </div>
         </Link>
 
         <div className="flex flex-1 justify-end pt-1">
