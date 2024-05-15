@@ -19,13 +19,13 @@ export function HeroSection() {
   return (
     <>
       <div className="bg-container w-[100%]">
-        <div className="bg-[url('https://natureclimbing.com/cdn/shop/articles/DSC01527_1.jpg?v=1674041333')] bg-cover bg-center bg-no-repeat rounded-lg w-[100%]">
+        <div className="bg-[url('/images/outdoor_2.jpg')] bg-cover text-white bg-no-repeat w-[100%]">
           <section className="mx-auto max-w-2xl py-10 sm:py-20 lg:py-32">
             <div className="text-center">
-              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-6xl">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-6xl drop-shadow-[0_0.0px_10.0px_rgba(0,0,0,0.8)]">
                 Climbing training gear and apparel
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-200 px-2">
+              <p className="mt-6 text-lg leading-8 px-2 drop-shadow-[0_0.0px_5.0px_rgba(0,0,0,0.9)]">
                 Elevating climbers skills, performance and looks.
               </p>
             </div>
