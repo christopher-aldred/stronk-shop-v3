@@ -25,8 +25,8 @@ export function HeroSection() {
               <h1 className="text-3xl font-bold tracking-tight sm:text-6xl drop-shadow-[0_0.0px_10.0px_rgba(0,0,0,0.8)]">
                 Climbing training gear and apparel
               </h1>
-              <p className="mt-6 text-lg leading-8 px-2 drop-shadow-[0_0.0px_5.0px_rgba(0,0,0,0.9)]">
-                Elevating climbers skills, performance and looks.
+              <p className="mt-6 text-sm sm:text-lg leading-8 px-2 drop-shadow-[0_0.0px_5.0px_rgba(0,0,0,0.9)]">
+                Elevating climbers skills, performance and style.
               </p>
             </div>
           </section>
