@@ -93,13 +93,13 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
       <section>
         <div className="flex flex-col rounded-lg shadow-sm md:flex-row md:space-x-8">
           <div className="md:basis-6/12 ">
-            <div className="h-full w-full overflow-hidden rounded-lg bg-gray-200">
+            <div className="h-full w-full overflow-hidden rounded-lg">
               <NextImage
                 src={props.data.images.nodes[0].url}
                 alt={props.data.images.nodes[0].altText || ''}
-                width={props.data.images.nodes[0].width}
                 height={props.data.images.nodes[0].height}
-                className="min-h-[600px] w-full object-cover object-center"
+                width={props.data.images.nodes[0].width}
+                className="aspect-square h-full w-full object-cover object-center group-hover:opacity-75"
               />
             </div>
           </div>
