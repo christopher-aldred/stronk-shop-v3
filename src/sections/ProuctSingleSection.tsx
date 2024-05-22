@@ -1,11 +1,10 @@
 import { storefront } from '@site/utilities/storefront';
 import { truncate } from 'lodash';
 import { ProductPrice, AddToCartButton, ProductProvider } from '@shopify/hydrogen-react';
-import { NextImage, DataProps, invariant, useVariantSelector, formatTitle, useEffect } from '@site/utilities/deps';
+import { DataProps, invariant, useVariantSelector, formatTitle } from '@site/utilities/deps';
 import { Button } from '@site/snippets';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import { describe } from 'node:test';
 
 export async function fetchProductSingleSection(handle: string) {
   const { productByHandle } = await storefront.query({
