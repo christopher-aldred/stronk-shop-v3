@@ -1,8 +1,11 @@
 import { storefront } from '@site/utilities/storefront';
 import { truncate } from 'lodash';
 import { ProductPrice, AddToCartButton, ProductProvider } from '@shopify/hydrogen-react';
-import { NextImage, DataProps, invariant, useVariantSelector, formatTitle } from '@site/utilities/deps';
+import { NextImage, DataProps, invariant, useVariantSelector, formatTitle, useEffect } from '@site/utilities/deps';
 import { Button } from '@site/snippets';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
+import { describe } from 'node:test';
 
 export async function fetchProductSingleSection(handle: string) {
   const { productByHandle } = await storefront.query({
@@ -88,18 +91,29 @@ export async function fetchProductSingleSection(handle: string) {
 export function ProductSingleSection(props: DataProps<typeof fetchProductSingleSection>) {
   const { variantId, options, selectOption } = useVariantSelector(props.data);
 
+  const images = props.data.images.nodes.map((item) => {
+    return {
+      original: item.url,
+      thumbnail: item.url,
+      describe: item.altText,
+      thumbnailLabel: item.altText,
+      originalTitle: item.altText,
+      thumbnailTitle: item.altText,
+    };
+  });
+
   return (
     <ProductProvider data={props.data}>
       <section>
-        <div className="flex flex-col rounded-lg shadow-sm md:flex-row md:space-x-8">
+        <div className="flex flex-col shadow-sm md:flex-row md:space-x-8">
           <div className="md:basis-6/12 ">
-            <div className="h-full w-full overflow-hidden rounded-lg">
-              <NextImage
-                src={props.data.images.nodes[0].url}
-                alt={props.data.images.nodes[0].altText || ''}
-                height={props.data.images.nodes[0].height}
-                width={props.data.images.nodes[0].width}
-                className="aspect-square h-full w-full object-cover object-center group-hover:opacity-75"
+            <div className="h-full w-full overflow-hidden">
+              <ImageGallery
+                showThumbnails={images.length > 1}
+                items={images}
+                showNav={false}
+                showFullscreenButton={false}
+                showPlayButton={false}
               />
             </div>
           </div>
