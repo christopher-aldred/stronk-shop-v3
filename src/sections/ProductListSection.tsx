@@ -56,7 +56,7 @@ export function ProductListSection(props: DataProps<typeof fetchProductListSecti
           .flatMap(({ edges }) => edges)
           .map(({ node }) => (
             <NextLink key={node.handle} href={`/products/${node.handle}`} className="group">
-              <div className="w-full overflow-hidden rounded-lg bg-gray-200">
+              <div className="w-full overflow-hidden rounded-lg">
                 <NextImage
                   src={node.featuredImage!.url}
                   alt={node.featuredImage!.altText || ''}
