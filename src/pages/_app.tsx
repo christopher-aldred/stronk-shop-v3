@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: NextAppProps) {
         description="⛰️ An online site specialising in climbing training equipment and apparel"
       />
       <CartProvider>
-        <ProgressBar options={{ showSpinner: false }} color="green" />
+        <ProgressBar options={{ showSpinner: false }} color="#0080FE" />
         <Component {...pageProps} />
       </CartProvider>
     </ShopifyProvider>

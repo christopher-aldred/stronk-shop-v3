@@ -11,7 +11,7 @@ interface Props {
 }
 
 const colors = {
-  primary: clsx('bg-primary-600 text-white hover:bg-primary-500 disabled:bg-primary-400'),
+  primary: clsx('bg-[#0080fe] text-white hover:bg-[#529fec] disabled:bg-[#a3c7eb]'),
   danger: clsx('bg-danger-600 text-white hover:bg-danger-500 disabled:bg-danger-400'),
   dark: clsx('bg-gray-900 text-white hover:bg-gray-800 disabled:bg-gray-700'),
   light: clsx('bg-gray-100 text-white hover:bg-gray-200 disabled:bg-gray-300'),

@@ -5,6 +5,7 @@ import { DataProps, invariant, useVariantSelector, formatTitle } from '@site/uti
 import { Button } from '@site/snippets';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
+import { useEffect } from 'react';
 
 export async function fetchProductSingleSection(handle: string) {
   const { productByHandle } = await storefront.query({
@@ -12,7 +13,7 @@ export async function fetchProductSingleSection(handle: string) {
       { handle },
       {
         title: true,
-        description: [{ truncateAt: 256 }, true],
+        description: [{ truncateAt: 512 }, true],
         seo: {
           title: true,
           description: true,
@@ -90,14 +91,20 @@ export async function fetchProductSingleSection(handle: string) {
 export function ProductSingleSection(props: DataProps<typeof fetchProductSingleSection>) {
   const { variantId, options, selectOption } = useVariantSelector(props.data);
 
+  useEffect(() => {
+    selectOption(options[0].name, options[0].values[0].value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const images = props.data.images.nodes.map((item) => {
     return {
       original: item.url,
-      thumbnail: item.url,
-      describe: item.altText,
-      thumbnailLabel: item.altText,
+      originalAlt: item.altText,
       originalTitle: item.altText,
+      thumbnail: item.url,
+      thumbnailLabel: item.altText,
       thumbnailTitle: item.altText,
+      describe: item.altText,
     };
   });
 
@@ -118,7 +125,7 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
           </div>
 
           <div className="md:basis-6/12">
-            <div className="mt-4 pt-5 md:pt-10">
+            <div className="mt-4 pt-5 md:pt-0">
               <h2 className="sr-only">Product information</h2>
 
               <h1 className="mb-5 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{props.data.title}</h1>
@@ -131,7 +138,7 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
 
               <div className="mb-2">
                 {options.map(({ name, values }) => (
-                  <div className="mb-3" key={name}>
+                  <div hidden={values.length < 2} className="mb-3" key={name}>
                     <div className="flex items-center justify-between">
                       <h3 className="mb-1 text-lg font-medium text-gray-900">{name}</h3>
                     </div>
@@ -139,7 +146,7 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
                     {values.map(({ value, selected, disabled }) => {
                       return (
                         <Button
-                          className="mr-1"
+                          className="mb-1 mr-1 "
                           color={selected ? 'primary' : 'dark'}
                           size="sm"
                           key={value}
@@ -156,7 +163,7 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
 
               <AddToCartButton
                 variantId={variantId}
-                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-primary-600 p-3 text-base font-semibold text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:bg-gray-700"
+                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-[#0080FE] p-3 text-base font-semibold text-white hover:bg-[#1466b7] focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:bg-gray-700"
               >
                 Add to Cart
               </AddToCartButton>
