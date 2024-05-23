@@ -170,7 +170,7 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
               </div>
 
               <AddToCartButton
-                onClickCapture={notify}
+                // onClickCapture={notify}
                 variantId={variantId}
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-[#0080FE] p-3 text-base font-semibold text-white hover:bg-[#1466b7] focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:bg-gray-700"
               >
@@ -180,7 +180,7 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
           </div>
         </div>
       </section>
-      <Toaster />
+      {/* <Toaster /> */}
     </ProductProvider>
   );
 }

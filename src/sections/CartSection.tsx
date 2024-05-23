@@ -55,7 +55,7 @@ export function CartSection() {
 
                   <div className="flex">
                     <CartLineQuantityAdjustButton
-                      className="font-medium text-indigo-600 hover:text-indigo-500"
+                      className="font-medium text-[#0080fe] hover:text-[#1466b7]"
                       adjust="remove"
                     >
                       Remove
