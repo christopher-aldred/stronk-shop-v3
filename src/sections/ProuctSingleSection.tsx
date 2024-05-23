@@ -6,14 +6,6 @@ import { Button } from '@site/snippets';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { useEffect } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
-import SuccessToastBasket from '../components/SuccessToastBasket';
-
-const notify = () =>
-  toast.custom(<SuccessToastBasket />, {
-    duration: 2000,
-    position: 'bottom-center',
-  });
 
 export async function fetchProductSingleSection(handle: string) {
   const { productByHandle } = await storefront.query({

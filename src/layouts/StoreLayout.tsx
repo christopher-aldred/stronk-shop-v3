@@ -10,7 +10,7 @@ export function StoreLayout(props: Props) {
   return (
     <>
       <HeaderSection />
-      <NavBar className="mx-auto max-w-7xl px-8 py-1 lg:py-3 " />
+      <NavBar className="mx-auto max-w-7xl px-8 py-1 lg:py-2 " />
       <hr />
       <main>{props.children}</main>
     </>

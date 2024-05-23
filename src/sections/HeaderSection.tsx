@@ -1,29 +1,27 @@
-import { useState, NextLink, useRouter, clsx } from '@site/utilities/deps';
+import { NextLink } from '@site/utilities/deps';
 import { useCart } from '@shopify/hydrogen-react';
 import { ShoppingBagIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export function HeaderSection() {
-  const router = useRouter();
   const { totalQuantity } = useCart();
 
   return (
-    <header className="border-b bg-white/70 py-2 backdrop-blur-2xl sticky top-0 z-50">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between pt-1 px-8" aria-label="Global">
-        <div className="flex flex-1 z-50">
+    <header className="sticky top-0 z-50 border-b bg-white/70 py-2 backdrop-blur-2xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 pt-1" aria-label="Global">
+        <div className="z-50 flex flex-1">
           <NextLink href="/products" className="-m-1.5 p-1.5">
             <span className="sr-only">Storefront</span>
             <ShoppingBagIcon className="h-6 w-6"></ShoppingBagIcon>
           </NextLink>
         </div>
 
-        <Link href="/">
-          {/* <Image src="/stronk.png" alt="logo" width="200" height="150" /> */}
-          <div className="h-12 lg:h-20">
-            <Image className="p-2" src="/stronk.png" alt="logo" layout="fill" objectFit="contain" />
-          </div>
-        </Link>
+        {/* <Link href="/"> */}
+        {/* <Image src="/stronk.png" alt="logo" width="200" height="150" /> */}
+        <div className="h-12 lg:h-14">
+          <Image className="p-2" src="/stronk.png" alt="logo" layout="fill" objectFit="contain" />
+        </div>
+        {/* </Link> */}
 
         <div className="flex flex-1 justify-end pt-1">
           <NextLink href="/cart">

@@ -62,7 +62,7 @@ export function CartSection() {
                     </CartLineQuantityAdjustButton>
 
                     {/* <CartLineQuantityAdjustButton adjust="increase">Increase</CartLineQuantityAdjustButton>
-              <CartLineQuantityAdjustButton adjust="decrease">Decrease</CartLineQuantityAdjustButton> */}
+                    <CartLineQuantityAdjustButton adjust="decrease">Decrease</CartLineQuantityAdjustButton> */}
                   </div>
                 </div>
               </div>

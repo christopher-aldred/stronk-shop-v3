@@ -38,13 +38,21 @@ const socialItems: MenuProps['items'] = [
 
 const shopItems: MenuProps['items'] = [
   {
-    label: <Link href="/training/max-hangs">Finger training</Link>,
+    label: <Link href="/products">All products</Link>,
     key: '0',
+    disabled: false,
+  },
+  {
+    type: 'divider',
+  },
+  {
+    label: <Link href="/training/max-hangs">Finger training</Link>,
+    key: '1',
     disabled: true,
   },
   {
     label: <Link href="/training/strength-calc">Clothing</Link>,
-    key: '1',
+    key: '',
     disabled: true,
   },
 ];
@@ -63,8 +71,11 @@ export default function NavBar(props: Props) {
           justifyContent: 'space-between',
         }}
       >
+        <Link style={{ cursor: 'pointer' }} href="/">
+          <Space>Home</Space>
+        </Link>
         <Dropdown menu={{ items: shopItems }} placement="bottom">
-          <Link style={{ cursor: 'pointer' }} href="/products">
+          <Link style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()} href="/products">
             <Space>Shop</Space>
           </Link>
         </Dropdown>
