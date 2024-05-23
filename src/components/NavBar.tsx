@@ -2,6 +2,7 @@ import React from 'react';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 import Link from 'next/link';
+import { useLocation } from 'react-use';
 
 const trainingItems: MenuProps['items'] = [
   {
@@ -62,6 +63,7 @@ type Props = {
 };
 
 export default function NavBar(props: Props) {
+  const path = useLocation().pathname; // React Hook
   return (
     <>
       <nav
@@ -71,25 +73,36 @@ export default function NavBar(props: Props) {
           justifyContent: 'space-between',
         }}
       >
-        <Link style={{ cursor: 'pointer' }} href="/">
+        <Link style={{ cursor: 'pointer', fontWeight: path == '/' ? 'bold' : 'normal' }} href="/">
           <Space>Home</Space>
         </Link>
         <Dropdown menu={{ items: shopItems }} placement="bottom">
-          <Link style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()} href="/products">
+          <Link
+            style={{ cursor: 'pointer', fontWeight: path?.includes('/products') ? 'bold' : 'normal' }}
+            onClick={(e) => e.preventDefault()}
+            href="/products"
+          >
             <Space>Shop</Space>
           </Link>
         </Dropdown>
         <Dropdown menu={{ items: trainingItems }} placement="bottom">
-          <Link href="#" style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()}>
+          <Link
+            href="#"
+            style={{ cursor: 'pointer', fontWeight: path?.includes('/training') ? 'bold' : 'normal' }}
+            onClick={(e) => e.preventDefault()}
+          >
             <Space>Training</Space>
           </Link>
         </Dropdown>
         <Dropdown menu={{ items: socialItems }} placement="bottom">
-          <Link href="#" style={{ cursor: 'pointer' }} onClick={(e) => e.preventDefault()}>
+          <Link
+            href="#"
+            style={{ cursor: 'pointer', fontWeight: path?.includes('/socials') ? 'bold' : 'normal' }}
+            onClick={(e) => e.preventDefault()}
+          >
             <Space>Socials</Space>
           </Link>
         </Dropdown>
-        <a href="#">Login</a>
       </nav>
     </>
   );
