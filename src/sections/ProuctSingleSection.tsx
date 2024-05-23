@@ -113,13 +113,23 @@ export function ProductSingleSection(props: DataProps<typeof fetchProductSingleS
       <section>
         <div className="flex flex-col shadow-sm md:flex-row md:space-x-8">
           <div className="md:basis-6/12 ">
-            <div className="h-full w-full overflow-hidden">
+            <div className="block lg:hidden">
               <ImageGallery
                 showThumbnails={images.length > 1}
                 items={images}
                 showNav={false}
                 showFullscreenButton={false}
                 showPlayButton={false}
+              />
+            </div>
+            <div className="hidden lg:block">
+              <ImageGallery
+                showThumbnails={images.length > 1}
+                items={images}
+                showNav={false}
+                showFullscreenButton={false}
+                showPlayButton={false}
+                thumbnailPosition={'left'}
               />
             </div>
           </div>
