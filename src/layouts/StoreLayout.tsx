@@ -2,6 +2,7 @@ import { ReactNode } from '@site/utilities/deps';
 import { HeaderSection } from '@site/sections/HeaderSection';
 import NavBar from '@site/components/NavBar';
 import { FooterSection } from '@site/sections/FooterSection';
+import GoogleAnalytics from '../components/GoogleAnalytics';
 
 interface Props {
   children: ReactNode;
@@ -10,6 +11,7 @@ interface Props {
 export function StoreLayout(props: Props) {
   return (
     <>
+      <GoogleAnalytics />
       <HeaderSection />
       <hr />
       <NavBar className="mx-auto max-w-7xl px-8 py-1 lg:py-2 " />
