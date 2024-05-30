@@ -76,13 +76,14 @@ export default function StrengthCalc() {
     if (trainingSystem === 'Hangboard') {
       // Sub-body weight result
       if (actAddedWeight < 1) {
-        output.push(<h6>You should be aiming to hang bodyweight!</h6>);
+        output.push(<h6 className=" text-xl font-bold">You should be aiming to hang bodyweight!</h6>);
         if (targetAddedWeight > 0) {
           output.push(
             <>
               <br />
               <p>
-                <h6>Strength needed for target: </h6>Bodyweight +{`${targetAddedWeight}${weightScale}`}
+                <h6 className="font-bold">Strength needed for target: </h6>
+                Bodyweight +{`${targetAddedWeight}${weightScale}`}
               </p>
             </>
           );
@@ -105,7 +106,7 @@ export default function StrengthCalc() {
           if (mvc < predictedAddedWeight) {
             output.push(
               <>
-                <h4>You are weak for your grade!</h4>
+                <h4 className="text-xl font-bold">You are weak for your grade!</h4>
                 <br />
               </>
             );
@@ -113,7 +114,7 @@ export default function StrengthCalc() {
           if (mvc === predictedAddedWeight) {
             output.push(
               <>
-                <h4>You are average for your grade!</h4>
+                <h4 className="text-xl font-bold">You are average for your grade!</h4>
                 <br />
               </>
             );
@@ -121,7 +122,7 @@ export default function StrengthCalc() {
           if (mvc > predictedAddedWeight) {
             output.push(
               <>
-                <h4>You are strong for your grade!</h4>
+                <h4 className="text-xl font-bold">You are strong for your grade!</h4>
                 <br />
               </>
             );
@@ -129,7 +130,7 @@ export default function StrengthCalc() {
         }
         output.push(
           <>
-            <h6>Strength needed for current grade: </h6>Bodyweight +
+            <h6 className="font-bold">Strength needed for current grade</h6>Bodyweight +
             {`${predictedAddedWeight > 0 ? predictedAddedWeight : 0}${weightScale}`}
           </>
         );
@@ -139,7 +140,7 @@ export default function StrengthCalc() {
             <br />
             <br />
             <p>
-              <h6>Strength needed for target: </h6>Bodyweight +
+              <h6 className="font-bold">Strength needed for target</h6>Bodyweight +
               {`${targetAddedWeight > 0 ? targetAddedWeight : 0}${weightScale}`}
             </p>
           </>
@@ -152,7 +153,7 @@ export default function StrengthCalc() {
         if (mvc < estSingleHandMVC) {
           output.push(
             <>
-              <h4>You are weak for your grade!</h4>
+              <h4 className="text-xl font-bold">You are weak for your grade!</h4>
               <br />
             </>
           );
@@ -160,7 +161,7 @@ export default function StrengthCalc() {
         if (mvc === estSingleHandMVC) {
           output.push(
             <>
-              <h4>You are average for your grade!</h4>
+              <h4 className="text-xl font-bold">You are average for your grade!</h4>
               <br />
             </>
           );
@@ -168,7 +169,7 @@ export default function StrengthCalc() {
         if (mvc > estSingleHandMVC) {
           output.push(
             <>
-              <h4>You are strong for your grade!</h4>
+              <h4 className="text-xl font-bold">You are strong for your grade!</h4>
               <br />
             </>
           );
@@ -177,7 +178,7 @@ export default function StrengthCalc() {
 
       output.push(
         <>
-          <h6>Strength needed for current grade: </h6>
+          <h6 className="font-bold">Strength needed for current grade</h6>
           {`${estSingleHandMVC}${weightScale}`} single hand lift
         </>
       );
@@ -187,7 +188,7 @@ export default function StrengthCalc() {
           <br />
           <br />
           <p>
-            <h6>Strength needed for target: </h6>
+            <h6 className="font-bold">Strength needed for target</h6>
             {`${trgtSingleHandMVC}${weightScale}`} single hand lift
           </p>
         </>
@@ -372,7 +373,7 @@ export default function StrengthCalc() {
         <NextLink
           onClick={calcStrength}
           href="#"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
         >
           Calculate strength!
         </NextLink>
