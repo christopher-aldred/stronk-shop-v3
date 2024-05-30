@@ -52,13 +52,13 @@ export function CartSection() {
                   <div className="text-gray-500">
                     Qty <CartLineQuantity></CartLineQuantity>
                     <CartLineQuantityAdjustButton
-                      className="pl-2 font-medium text-[#0080fe] hover:text-[#1466b7]"
+                      className="ml-2 font-medium text-[#0080fe] hover:text-[#1466b7]"
                       adjust="decrease"
                     >
                       <MinusSquareOutlined />
                     </CartLineQuantityAdjustButton>
                     <CartLineQuantityAdjustButton
-                      className="pl-2 font-medium text-[#0080fe] hover:text-[#1466b7]"
+                      className="ml-2 font-medium text-[#0080fe] hover:text-[#1466b7]"
                       adjust="increase"
                     >
                       <PlusSquareOutlined />
