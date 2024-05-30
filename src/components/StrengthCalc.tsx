@@ -370,13 +370,9 @@ export default function StrengthCalc() {
         </Container>
         <hr />
         <br />
-        <NextLink
-          onClick={calcStrength}
-          href="#"
-          className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-        >
+        <a onClick={calcStrength} className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
           Calculate strength!
-        </NextLink>
+        </a>
       </center>
       <Modal
         title="Results 🎉"
