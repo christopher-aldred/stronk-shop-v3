@@ -8,7 +8,7 @@ import {
   CartLineQuantity,
   CartCheckoutButton,
 } from '@shopify/hydrogen-react';
-
+import { PlusSquareOutlined, MinusSquareOutlined } from '@ant-design/icons';
 export function CartSection() {
   const cart = useCart();
 
@@ -51,6 +51,18 @@ export function CartSection() {
                 <div className="flex flex-1 items-end justify-between text-sm">
                   <div className="text-gray-500">
                     Qty <CartLineQuantity></CartLineQuantity>
+                    <CartLineQuantityAdjustButton
+                      className="pl-2 font-medium text-[#0080fe] hover:text-[#1466b7]"
+                      adjust="decrease"
+                    >
+                      <MinusSquareOutlined />
+                    </CartLineQuantityAdjustButton>
+                    <CartLineQuantityAdjustButton
+                      className="pl-2 font-medium text-[#0080fe] hover:text-[#1466b7]"
+                      adjust="increase"
+                    >
+                      <PlusSquareOutlined />
+                    </CartLineQuantityAdjustButton>
                   </div>
 
                   <div className="flex">
@@ -60,9 +72,6 @@ export function CartSection() {
                     >
                       Remove
                     </CartLineQuantityAdjustButton>
-
-                    {/* <CartLineQuantityAdjustButton adjust="increase">Increase</CartLineQuantityAdjustButton>
-                    <CartLineQuantityAdjustButton adjust="decrease">Decrease</CartLineQuantityAdjustButton> */}
                   </div>
                 </div>
               </div>
