@@ -1,20 +1,6 @@
 import { NextLink } from '@site/utilities/deps';
-import React, { useEffect } from 'react';
 
 export function HeroSection() {
-  useEffect(() => {
-    const script = document.createElement('script');
-
-    script.src = '/grained.js';
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <>
       <div className="bg-container bg-[url('/images/hero.jpeg')] bg-cover bg-no-repeat text-white">
