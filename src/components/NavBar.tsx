@@ -73,34 +73,22 @@ export default function NavBar(props: Props) {
           justifyContent: 'space-between',
         }}
       >
-        <Link style={{ cursor: 'pointer', fontWeight: path == '/' ? 'bold' : 'normal' }} href="/">
-          <Space>Home</Space>
+        <Link href="/">
+          <Space className="text-base leading-6 text-gray-500 hover:text-gray-900">Home</Space>
         </Link>
         <Dropdown menu={{ items: shopItems }} placement="bottom">
-          <Link
-            style={{ cursor: 'pointer', fontWeight: path?.includes('/products') ? 'bold' : 'normal' }}
-            onClick={(e) => e.preventDefault()}
-            href="/products"
-          >
-            <Space>Shop</Space>
+          <Link onClick={(e) => e.preventDefault()} href="/products">
+            <Space className="text-base leading-6 text-gray-500 hover:text-gray-900">Shop</Space>
           </Link>
         </Dropdown>
         <Dropdown menu={{ items: trainingItems }} placement="bottom">
-          <Link
-            href="#"
-            style={{ cursor: 'pointer', fontWeight: path?.includes('/training') ? 'bold' : 'normal' }}
-            onClick={(e) => e.preventDefault()}
-          >
-            <Space>Training</Space>
+          <Link href="#" onClick={(e) => e.preventDefault()}>
+            <Space className="text-base leading-6 text-gray-500 hover:text-gray-900">Training</Space>
           </Link>
         </Dropdown>
         <Dropdown menu={{ items: socialItems }} placement="bottom">
-          <Link
-            href="#"
-            style={{ cursor: 'pointer', fontWeight: path?.includes('/socials') ? 'bold' : 'normal' }}
-            onClick={(e) => e.preventDefault()}
-          >
-            <Space>Socials</Space>
+          <Link href="#" onClick={(e) => e.preventDefault()}>
+            <Space className="text-base leading-6 text-gray-500 hover:text-gray-900">Socials</Space>
           </Link>
         </Dropdown>
       </nav>

@@ -3225,7 +3225,7 @@ Formatted using E.164 standard. For example, _+16135551111_.
 	phone?:boolean | `@${string}`,
 	/** The region of the address, such as the province, state, or district. */
 	province?:boolean | `@${string}`,
-	/** The two-letter code for the region.
+	/** The alphanumeric code for the region.
 
 For example, ON.
  */
@@ -7704,7 +7704,7 @@ Formatted using E.164 standard. For example, _+16135551111_.
 	phone?:boolean | `@${string}`,
 	/** The region of the address, such as the province, state, or district. */
 	province?:boolean | `@${string}`,
-	/** The two-letter code for the region.
+	/** The alphanumeric code for the region.
 
 For example, ON.
  */
@@ -11854,7 +11854,7 @@ Formatted using E.164 standard. For example, _+16135551111_.
 	phone?: string | undefined,
 	/** The region of the address, such as the province, state, or district. */
 	province?: string | undefined,
-	/** The two-letter code for the region.
+	/** The alphanumeric code for the region.
 
 For example, ON.
  */
@@ -15786,7 +15786,7 @@ Formatted using E.164 standard. For example, _+16135551111_.
 	phone?: string | undefined,
 	/** The region of the address, such as the province, state, or district. */
 	province?: string | undefined,
-	/** The two-letter code for the region.
+	/** The alphanumeric code for the region.
 
 For example, ON.
  */

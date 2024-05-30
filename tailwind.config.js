@@ -15,6 +15,10 @@ module.exports = {
         light: colors.white,
         dark: colors.black,
       },
+      fontFamily: {
+        customFont: ['"Custom Font"', 'sans-serif'],
+        // Add more custom font families as needed
+      },
     },
   },
   plugins: [],

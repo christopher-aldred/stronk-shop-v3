@@ -1,6 +1,5 @@
 import { NextLink } from '@site/utilities/deps';
 import React, { useEffect } from 'react';
-import styles from '/assets/filmgrain.module.css';
 
 export function HeroSection() {
   useEffect(() => {
@@ -18,15 +17,13 @@ export function HeroSection() {
 
   return (
     <>
-      <div className="bg-container w-[100%]">
-        <div className="w-[100%] bg-[url('/images/outdoor_2.jpg')] bg-cover bg-no-repeat text-white">
+      <div className="bg-container bg-[url('/images/hero.jpeg')] bg-cover bg-no-repeat text-white">
+        <div className="bg-black bg-opacity-30 shadow-[inset_0_0px_20px_rgba(0,0,0,0.3)]">
           <section className="mx-auto max-w-2xl py-10 sm:py-20 lg:py-32">
             <div className="text-center">
-              <h1 className="text-3xl font-bold tracking-tight drop-shadow-[0_0.0px_10.0px_rgba(0,0,0,0.8)] sm:text-6xl">
-                Climbing training gear and apparel
-              </h1>
-              <p className="mt-6 px-2 text-sm leading-8 drop-shadow-[0_0.0px_5.0px_rgba(0,0,0,0.9)] sm:text-lg">
-                Elevating climbers skills, performance and style.
+              <h1 className="text-4xl tracking-tight sm:text-5xl">Climbing, Training, Gear & Apparel</h1>
+              <p className="mt-6 px-2 text-sm leading-8 sm:text-lg hidden sm:block">
+                Elevating climbers skills, performance and style
               </p>
             </div>
           </section>
