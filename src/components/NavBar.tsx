@@ -63,7 +63,6 @@ type Props = {
 };
 
 export default function NavBar(props: Props) {
-  const path = useLocation().pathname; // React Hook
   return (
     <>
       <nav

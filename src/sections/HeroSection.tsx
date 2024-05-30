@@ -4,11 +4,11 @@ export function HeroSection() {
   return (
     <>
       <div className="bg-container bg-[url('/images/hero.jpeg')] bg-cover bg-no-repeat text-white">
-        <div className="bg-black bg-opacity-50 shadow-[inset_0_0px_24px_rgba(0,0,0,0.2)]">
-          <section className="mx-auto max-w-2xl py-10 py-10 md:py-24">
+        <div className="bg-black/50 shadow-[inset_0_0px_24px_rgba(0,0,0,0.2)]">
+          <section className="mx-auto max-w-2xl py-10 md:py-24">
             <div className="text-center">
-              <h1 className="text-4xl tracking-tight md:text-5xl px-1">Climbing, Training, Gear & Apparel</h1>
-              <p className="mt-6 px-2 text-sm leading-8 sm:text-lg hidden md:block">
+              <h1 className="z-50 px-1 text-4xl tracking-tight md:text-5xl">Climbing, Training, Gear & Apparel</h1>
+              <p className="z-[999] mt-6 hidden px-2 text-sm leading-8 sm:text-lg md:block">
                 Elevating climbers skills, performance and style
               </p>
             </div>
@@ -19,9 +19,9 @@ export function HeroSection() {
               >
                 Browse Products
               </NextLink>
-              <a href="/training/max-hangs" className="z-50 text-sm font-semibold leading-6 text-white" target="_blank">
+              <NextLink href="/training/strength-calc" className="z-50 text-sm font-semibold leading-6 text-white">
                 Go to training <span aria-hidden="true">→</span>
-              </a>
+              </NextLink>
             </div>
           </section>
         </div>

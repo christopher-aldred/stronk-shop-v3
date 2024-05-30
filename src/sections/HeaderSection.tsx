@@ -7,7 +7,7 @@ export function HeaderSection() {
   const { totalQuantity } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/70 py-2 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 bg-white/70 py-2 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 pt-1" aria-label="Global">
         <div className="z-50 flex flex-1">
           <NextLink href="/products" className="-m-1.5 p-1.5">
