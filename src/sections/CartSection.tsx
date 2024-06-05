@@ -24,7 +24,7 @@ export function CartSection() {
                   alt={line?.merchandise?.image?.altText || ''}
                   width={line?.merchandise?.image?.width!}
                   height={line?.merchandise?.image?.height!}
-                  className="h-full w-full object-cover object-center"
+                  className="h-full w-full object-contain object-center"
                 />
               </div>
 
