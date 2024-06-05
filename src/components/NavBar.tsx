@@ -2,7 +2,6 @@ import React from 'react';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 import Link from 'next/link';
-import { useLocation } from 'react-use';
 
 const trainingItems: MenuProps['items'] = [
   {
