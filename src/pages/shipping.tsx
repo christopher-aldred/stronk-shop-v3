@@ -1,10 +1,14 @@
 import { StoreLayout } from '@site/layouts/StoreLayout';
+import Image from 'next/image';
 
 export default function ShippingPage() {
   return (
     <StoreLayout>
-      <div className="mx-auto my-6 max-w-4xl rounded-lg p-6 text-center sm:shadow-sm lg:border lg:border-gray-200">
-        <h1 className="mb-6 text-4xl font-semibold text-gray-800">Shipping Information</h1>
+      <div className="mx-auto my-0 max-w-4xl rounded-lg p-6 text-center sm:shadow-sm lg:my-6 lg:border lg:border-gray-200">
+        <h1 className="text-4xl font-semibold text-gray-800">Shipping Information</h1>
+        <center>
+          <Image src="/shipping.png" width={100} height={100} alt="Shipping logo" />
+        </center>
         <p className="text-lg text-gray-600">
           We tailor our shipping approach for each order, taking into account the specific item and the region of the
           customer. This ensures that we can provide the most efficient and cost-effective shipping solutions for our
