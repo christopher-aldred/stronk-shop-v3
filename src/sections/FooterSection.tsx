@@ -19,7 +19,10 @@ export function FooterSection() {
               </Link>
             </div>
             <div className="px-5 py-2">
-              <Link href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+              <Link
+                href="https://a05c2b-be.goaffpro.com/"
+                className="text-base leading-6 text-gray-500 hover:text-gray-900"
+              >
                 Affiliate Program
               </Link>
             </div>
