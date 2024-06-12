@@ -5,7 +5,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { InputNumber, Button } from 'antd';
 import weightRatio from '../vars/ratios';
 import { RWebShare } from 'react-web-share';
-import { NextLink } from '@site/utilities/deps';
 
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
