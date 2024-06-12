@@ -86,7 +86,7 @@ export default function NavBar(props: Props) {
         </Dropdown>
         <Dropdown menu={{ items: socialItems }} placement="bottom">
           <Link href="#" onClick={(e) => e.preventDefault()}>
-            <Space className="text-base leading-6 text-gray-500 hover:text-gray-900">Socials</Space>
+            <Space className="text-base leading-6 text-gray-500 hover:text-gray-900">Articles</Space>
           </Link>
         </Dropdown>
       </nav>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export function FooterSection() {
@@ -6,33 +7,23 @@ export function FooterSection() {
       <div className="mx-auto max-w-screen-xl space-y-8 overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">
-            <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              About
-            </a>
-          </div>
-          {/* <div className="px-5 py-2">
-            <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              Team
-            </a>
-          </div> */}
-          <div className="px-5 py-2">
-            <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <Link href="/shipping" className="text-base leading-6 text-gray-500 hover:text-gray-900">
               Shipping
-            </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
-            <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <Link href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
               Contact
-            </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
-            <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <Link href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
               Affiliate Program
-            </a>
+            </Link>
           </div>
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
-          <a href="#" className="text-gray-400 hover:text-gray-500">
+          <Link href="#" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">Facebook</span>
             <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -41,8 +32,8 @@ export function FooterSection() {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-gray-500">
+          </Link>
+          <Link href="#" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">Instagram</span>
             <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -51,8 +42,8 @@ export function FooterSection() {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-gray-500">
+          </Link>
+          <Link href="#" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">GitHub</span>
             <svg className="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -61,7 +52,7 @@ export function FooterSection() {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
+          </Link>
         </div>
         {/* <p className="mt-8 text-base leading-6 text-center text-gray-400">
           © 2021 SomeCompany, Inc. All rights reserved.
