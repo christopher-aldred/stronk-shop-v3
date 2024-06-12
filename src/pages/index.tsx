@@ -6,9 +6,9 @@ export default function Page() {
     <StoreLayout>
       <HeroSection />
       <div className="flex flex-col justify-center">
-        <div className="relative -top-10 py-3 sm:mx-auto sm:max-w-xl">
-          <div className="absolute inset-0 z-10 -rotate-6 skew-y-0 rounded-3xl bg-gradient-to-r from-teal-500 to-cyan-600 shadow-lg"></div>
-          <div className="relative z-20 rounded-3xl bg-slate-50 p-20 px-4 py-10 shadow-lg">
+        <div className="relative top-0 py-0 sm:-top-10 sm:mx-auto sm:max-w-2xl sm:py-3">
+          <div className="absolute inset-0 z-10 hidden -rotate-6 skew-y-0 rounded-3xl bg-gradient-to-r from-teal-500 to-cyan-600 shadow-lg sm:inline"></div>
+          <div className="relative z-20 rounded-3xl bg-white p-20 px-4 py-10 sm:bg-slate-50 sm:shadow-lg">
             <h1 className="mb-2 text-2xl font-bold text-gray-900">About Us</h1>
             <p className="text-gray-500">
               Our business is dedicated to providing quality training gear and clothing designed specifically for

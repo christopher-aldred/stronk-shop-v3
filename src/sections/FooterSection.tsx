@@ -4,7 +4,7 @@ import React from 'react';
 export function FooterSection() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-screen-xl space-y-8 overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl space-y-8 overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">
             <Link href="/shipping" className="text-base leading-6 text-gray-500 hover:text-gray-900">
@@ -12,7 +12,7 @@ export function FooterSection() {
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <Link href="contact" className="text-base leading-6 text-gray-500 hover:text-gray-900">
               Contact
             </Link>
           </div>
