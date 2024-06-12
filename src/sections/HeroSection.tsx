@@ -3,7 +3,7 @@ import { NextLink } from '@site/utilities/deps';
 export function HeroSection() {
   return (
     <>
-      <div className="bg-container bg-[url('/images/hero.jpeg')] bg-cover bg-no-repeat text-white">
+      <div className="bg-container bg-[url('/images/bg.jpeg')] bg-cover bg-no-repeat text-white">
         <div className="bg-black/50 shadow-[inset_0_0px_24px_rgba(0,0,0,0.2)]">
           <section className="mx-auto max-w-2xl py-10 md:py-24">
             <div className="text-center">
