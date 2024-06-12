@@ -17,8 +17,8 @@ export default function ShippingPage() {
         </p>
         <p className="mt-4 text-lg text-gray-600">
           For detailed information about shipping costs and delivery times for your specific location, please get in
-          touch with our customer service team. We're here to help make your shopping experience as smooth and enjoyable
-          as possible.
+          touch with our customer service team. We&apos;re here to help make your shopping experience as smooth and
+          enjoyable as possible.
         </p>
       </div>
     </StoreLayout>
