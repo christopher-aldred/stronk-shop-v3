@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const trainingItems: MenuProps['items'] = [
   {
-    label: <Link href="/training/strength-calc">Strength Calculator</Link>,
+    label: <Link href="/training/strength-calc">Finger assessment</Link>,
     key: '1',
   },
   {
