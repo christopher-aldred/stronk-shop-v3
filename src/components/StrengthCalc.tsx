@@ -244,131 +244,120 @@ export default function StrengthCalc() {
   return (
     <>
       <center>
-        <Container>
-          <Row>
-            <Col>
-              <h4>Grading system</h4>
-              <div style={{ minWidth: '250px' }}>
-                <RadioGroup onChange={onGradeChange} defaultValue="Boulder" size="large">
-                  <Tooltip title="Hueco (V grade)">
-                    <RadioButton value="Boulder" style={{ marginBottom: '10px' }}>
-                      Boulder
-                    </RadioButton>
-                  </Tooltip>
-                  <Tooltip title="French (F grade)">
-                    <RadioButton value="Sport">Sport</RadioButton>
-                  </Tooltip>
-                </RadioGroup>
-              </div>
-            </Col>
-            <Col>
-              <h4>Training tool</h4>
-              <div style={{ minWidth: '250px' }}>
-                <RadioGroup onChange={onTrainingChange} defaultValue="Hangboard" size="large">
-                  <Tooltip title="Climber hangs two handed">
-                    <RadioButton value="Hangboard" style={{ marginBottom: '10px' }}>
-                      Hangboard
-                    </RadioButton>
-                  </Tooltip>
-                  <Tooltip title="Climber lifts weight one handed">
-                    <RadioButton value="LiftingPin">Crimp block</RadioButton>
-                  </Tooltip>
-                </RadioGroup>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <hr />
-        <Container>
-          <Row>
-            <Col>
-              <h4>Current grade</h4>
-              <Select
-                size="large"
-                defaultValue={weightRatio[0].value}
-                onChange={setCurrentGrade}
-                style={{ width: 200, marginBottom: '10px' }}
-                options={gradeSystem === 'Boulder' ? optionsBoulder : optionsSport}
-                value={currentGrade}
-              />
-            </Col>
-            <Col>
-              <h4>Target grade</h4>
-              <Select
-                size="large"
-                defaultValue={weightRatio[0].value}
-                onChange={setTargetGrade}
-                style={{ width: 200, marginBottom: '10px' }}
-                options={gradeSystem === 'Boulder' ? optionsBoulder : optionsSport}
-                value={targetGrade}
-              />
-            </Col>
-          </Row>
-        </Container>
-        <hr />
-        <Container>
-          <Row>
-            <Col>
-              <h4>Body weight</h4>
-              <InputNumber
-                style={{ width: 200, marginBottom: '10px' }}
-                value={weight}
-                onChange={onWeightChange}
-                min={1}
-                max={999}
-                addonAfter={selectAfter}
-                defaultValue={0}
-              />
-              <br />
-            </Col>
-            <Col>
-              {trainingSystem === 'Hangboard' ? (
-                <>
-                  <h4>
-                    <Tooltip title="Weight added on a 20mm edge">Max hang </Tooltip>
-                    <Checkbox
-                      onClick={toggleMVC}
-                      checked={manualMvcEnabled}
-                      style={{ position: 'relative', top: '-1px' }}
-                    />
-                  </h4>
-                  <InputNumber
-                    disabled={!manualMvcEnabled}
-                    style={{ width: 200, marginBottom: '10px' }}
-                    addonBefore={'+'}
-                    addonAfter={selectAfter}
-                    defaultValue={0}
-                    value={mvc}
-                    onChange={onMvcChange}
+        <div className="grid grid-cols-1 gap-4 pb-8 md:grid-cols-1 lg:grid-cols-2">
+          <div className="rounded-xl bg-slate-100/50 p-4 text-center">
+            <h4>Body weight</h4>
+            <InputNumber
+              style={{ width: 200, marginBottom: '10px' }}
+              value={weight}
+              onChange={onWeightChange}
+              min={1}
+              max={999}
+              addonAfter={selectAfter}
+              defaultValue={0}
+            />
+          </div>
+
+          <div className="rounded-xl bg-slate-100/50 p-4 text-center">
+            <h4>Climbing type</h4>
+            <div style={{ minWidth: '250px' }}>
+              <RadioGroup onChange={onGradeChange} defaultValue="Boulder" size="large">
+                <Tooltip title="Hueco (V grade)">
+                  <RadioButton value="Boulder" style={{ marginBottom: '10px' }}>
+                    Boulder
+                  </RadioButton>
+                </Tooltip>
+                <Tooltip title="French (F grade)">
+                  <RadioButton value="Sport">Sport</RadioButton>
+                </Tooltip>
+              </RadioGroup>
+            </div>
+          </div>
+
+          <div className="rounded-xl bg-slate-100/50 p-4 text-center">
+            <h4>Training tool</h4>
+            <div style={{ minWidth: '250px' }}>
+              <RadioGroup onChange={onTrainingChange} defaultValue="Hangboard" size="large">
+                <Tooltip title="Climber hangs two handed">
+                  <RadioButton value="Hangboard" style={{ marginBottom: '10px' }}>
+                    Hangboard
+                  </RadioButton>
+                </Tooltip>
+                <Tooltip title="Climber lifts weight one handed">
+                  <RadioButton value="LiftingPin">Crimp block</RadioButton>
+                </Tooltip>
+              </RadioGroup>
+            </div>
+          </div>
+
+          <div className="rounded-xl bg-slate-100/50 p-4 text-center">
+            {trainingSystem === 'Hangboard' ? (
+              <>
+                <h4>
+                  <Tooltip title="Added weight (optional)">Max hang &nbsp;</Tooltip>
+                  <Checkbox
+                    onClick={toggleMVC}
+                    checked={manualMvcEnabled}
+                    style={{ position: 'relative', top: '-1px' }}
                   />
-                </>
-              ) : (
-                <>
-                  <h4>
-                    <Tooltip title="Heaviest lift using a 20mm edge">Max lift </Tooltip>
-                    <Checkbox
-                      onClick={toggleMVC}
-                      checked={manualMvcEnabled}
-                      style={{ position: 'relative', top: '-1px' }}
-                    />
-                  </h4>
-                  <InputNumber
-                    disabled={!manualMvcEnabled}
-                    style={{ width: 200, marginBottom: '10px' }}
-                    min={0}
-                    max={999}
-                    addonAfter={selectAfter}
-                    defaultValue={0}
-                    value={mvc}
-                    onChange={onMvcChange}
+                </h4>
+                <InputNumber
+                  disabled={!manualMvcEnabled}
+                  style={{ width: 200, marginBottom: '10px' }}
+                  addonBefore={'+'}
+                  addonAfter={selectAfter}
+                  defaultValue={0}
+                  value={mvc}
+                  onChange={onMvcChange}
+                />
+              </>
+            ) : (
+              <>
+                <h4>
+                  <Tooltip title="Heaviest lift (optional)">Max lift </Tooltip>
+                  <Checkbox
+                    onClick={toggleMVC}
+                    checked={manualMvcEnabled}
+                    style={{ position: 'relative', top: '-1px' }}
                   />
-                </>
-              )}
-            </Col>
-          </Row>
-        </Container>
-        <hr />
-        <br />
+                </h4>
+                <InputNumber
+                  disabled={!manualMvcEnabled}
+                  style={{ width: 200, marginBottom: '10px' }}
+                  min={0}
+                  max={999}
+                  addonAfter={selectAfter}
+                  defaultValue={0}
+                  value={mvc}
+                  onChange={onMvcChange}
+                />
+              </>
+            )}
+          </div>
+
+          <div className="rounded-xl bg-slate-100/50 p-4 text-center">
+            <h4>Current grade</h4>
+            <Select
+              size="large"
+              defaultValue={weightRatio[0].value}
+              onChange={setCurrentGrade}
+              style={{ width: 200, marginBottom: '10px' }}
+              options={gradeSystem === 'Boulder' ? optionsBoulder : optionsSport}
+              value={currentGrade}
+            />
+          </div>
+          <div className="rounded-xl bg-slate-100/50 p-4 text-center">
+            <h4>Target grade</h4>
+            <Select
+              size="large"
+              defaultValue={weightRatio[0].value}
+              onChange={setTargetGrade}
+              style={{ width: 200, marginBottom: '10px' }}
+              options={gradeSystem === 'Boulder' ? optionsBoulder : optionsSport}
+              value={targetGrade}
+            />
+          </div>
+        </div>
         <a onClick={calcStrength} className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
           Calculate strength!
         </a>
